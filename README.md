@@ -1,5 +1,5 @@
 # resolve single-node cluster yellow index health
-```
+```http
 PUT /myindex/_settings
 {
   "index": {
@@ -8,7 +8,7 @@ PUT /myindex/_settings
 }
 ```
 define a template:
-```
+```http
 PUT _index_template/myindex-template
 {
   "index_patterns": ["myindex*"],
@@ -22,7 +22,7 @@ PUT _index_template/myindex-template
 ```
 
 # Get shards, nodes, cluster health
-```
+```http
 GET _cat/shards?v
 GET _cat/nodes?v
 GET _cluster/health
