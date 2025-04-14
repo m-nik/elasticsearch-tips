@@ -7,6 +7,17 @@ PUT /myindex/_settings
   }
 }
 ```
+# settings of current indexes
+```
+GET /_all/_settings
+GET /my-index-*/_settings
+PUT /my-index-*/_settings
+{
+  "index": {
+    "number_of_replicas": 0
+  }
+}
+```
 define a template:
 ```http
 PUT /_index_template/myindex-template
@@ -24,6 +35,7 @@ PUT /_index_template/myindex-template
 # Get shards, nodes, cluster health
 ```http
 GET /_cat/shards?v
+GET /_cat/shards/my-index-*?v
 GET /_cat/nodes?v
 GET /_cluster/health
 ```
