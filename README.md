@@ -8,7 +8,7 @@ PUT /myindex/_settings
 }
 ```
 # settings of current indexes
-```
+```http
 GET /_all/_settings
 GET /my-index-*/_settings
 PUT /my-index-*/_settings
