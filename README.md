@@ -42,3 +42,16 @@ GET /_cat/nodes?v
 GET /_cluster/health
 GET /_index_template
 ```
+
+
+# Asynchronous operations
+```
+POST myindex/_delete_by_query?wait_for_completion=false
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET _tasks/abcd1234:56789
+```
