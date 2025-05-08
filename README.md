@@ -69,3 +69,30 @@ POST _reindex
   }
 }
 ```
+
+##### Remote reindex
+```http
+POST _reindex?wait_for_completion=false
+{
+        "source": {
+            "remote": {
+                "host": "http://address:port",
+                "username": "user",
+                "password": "password"
+            },
+            "index": "myindex"
+        },
+        "dest": {
+            "index": "myindex",
+            "op_type": "create"
+        }
+    }
+```
+- op_type prevents duplication
+- wait_for_completion=false for asyn task
+- remote host must be defined in elasticsearch configs:
+  ```yml
+  nodeSets:
+    config:
+      reindex.remote.whitelist: "IP:PORT"`
+  ```
