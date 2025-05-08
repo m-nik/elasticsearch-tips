@@ -99,6 +99,7 @@ POST _reindex?wait_for_completion=false
 - reindex doesn't transfer mappings and settings:
   ```yml
   GET myindex/_mapping
+  GET myindex/_settings
   ```
   ```yml
   PUT myindex
@@ -107,6 +108,9 @@ POST _reindex?wait_for_completion=false
       "properties": {
         ...
       }
+    },
+    "settings": {
+      ...
     }
   }
   ```
