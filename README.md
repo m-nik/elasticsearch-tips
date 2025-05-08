@@ -45,7 +45,7 @@ GET /_index_template
 
 
 # Asynchronous operations
-```
+```http
 POST myindex/_delete_by_query?wait_for_completion=false
 {
   "query": {
@@ -54,4 +54,18 @@ POST myindex/_delete_by_query?wait_for_completion=false
 }
 
 GET _tasks/abcd1234:56789
+```
+
+
+# Reindex
+```http
+POST _reindex
+{
+  "source": {
+    "index": "index_name"
+  },
+  "dest": {
+    "index": "new_index_name"
+  }
+}
 ```
