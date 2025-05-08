@@ -96,3 +96,17 @@ POST _reindex?wait_for_completion=false
     config:
       reindex.remote.whitelist: "IP:PORT"`
   ```
+- reindex doesn't transfer mappings and settings:
+  ```yml
+  GET myindex/_mapping
+  ```
+  ```yml
+  PUT myindex
+  {
+    "mappings": {
+      "properties": {
+        ...
+      }
+    }
+  }
+  ```
