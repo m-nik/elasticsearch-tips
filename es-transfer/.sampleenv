@@ -1,0 +1,10 @@
+# Elasticsearch source cluster
+SOURCE_ES=http://192.168.1.1:9100
+SOURCE_USERNAME=user
+SOURCE_PASSWORD=password
+
+# Elasticsearch destination cluster
+DEST_ES=https://192.168.2.1:9100
+DEST_USERNAME=user
+DEST_PASSWORD=password
+
