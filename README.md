@@ -38,6 +38,7 @@ PUT /_index_template/myindex-template
 ```http
 GET /_cat/shards?v
 GET /_cat/shards/my-index-*?v
+GET _cat/shards?v&index=*,-.*
 GET /_cat/nodes?v
 GET /_cluster/health
 GET /_index_template
