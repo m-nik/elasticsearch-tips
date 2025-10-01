@@ -36,6 +36,8 @@ PUT /_index_template/myindex-template
 
 # Get shards, nodes, cluster health
 ```http
+GET /_cat/
+GET /_cat/indices
 GET /_cat/shards?v
 GET /_cat/shards/my-index-*?v
 GET _cat/shards?v&index=*,-.*
