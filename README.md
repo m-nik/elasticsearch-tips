@@ -7,6 +7,13 @@ PUT /myindex/_settings
   }
 }
 ```
+
+# Delete indexes
+```http
+DELETE /index
+```
+
+
 # settings of current indexes
 ```http
 GET /_all/_settings
