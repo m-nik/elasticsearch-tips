@@ -55,7 +55,7 @@ GET /_index_template
 ```
 
 # Create index and documents
-```
+```http
 #create an index
 PUT /products
 
