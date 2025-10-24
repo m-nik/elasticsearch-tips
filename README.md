@@ -54,6 +54,50 @@ GET /_cluster/health?pretty
 GET /_index_template
 ```
 
+# Create index and documents
+```
+#create an index
+PUT /products
+
+POST /products/_doc/1
+{
+  "product_id": 100,
+  "name": "Dish Washer",
+  "price": 11.2
+}
+
+GET /products/_doc/1
+
+# Query
+GET /products/_search
+{
+  "query": {
+    "match":{
+      "name": "Dish"
+    }
+  }
+}
+
+# Replace the document
+PUT /products/_doc/1
+{
+  "price": 11.9
+}
+
+#Update the document
+POST /products/_doc/1/_update
+{
+  "doc":{
+    "price": 11.9
+  }
+}
+
+# Delete Document
+DELETE /products/_doc/1
+# Delete Index
+DELETE /products
+
+```
 
 # Asynchronous operations
 ```http
