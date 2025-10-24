@@ -56,8 +56,38 @@ GET /_index_template
 
 # Create index and documents
 ```http
-#create an index
+#create an index with dynamic mapping
 PUT /products
+# create with explicit mapping
+PUT /products
+{
+    "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 1
+    },
+    "mappings": {
+        "properties": {
+            "product_id": {
+                "type": "integer"
+            },
+            "name": {
+                "type": "text"
+            },
+            "description": {
+                "type": "text"
+            },
+            "price": {
+                "type": "float"
+            },
+            "category": {
+                "type": "text"
+            },
+            "brand": {
+                "type": "text"
+            }
+        }
+    }
+}
 
 POST /products/_doc/1
 {
