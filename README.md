@@ -50,6 +50,7 @@ GET /_cat/shards/my-index-*?v
 GET _cat/shards?v&index=*,-.*
 GET /_cat/nodes?v
 GET /_cluster/health
+GET /_cluster/health?pretty
 GET /_index_template
 ```
 
