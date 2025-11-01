@@ -20,6 +20,27 @@ __PUT__: This HTTP method is used in Elasticsearch primarily for creating new do
 __POST__: This method can also be used to create new documents. However, if you do not specify the document ID, Elasticsearch automatically generates one for you. POST is also used to update parts of a document.
 
 
+
+# Create index with static mapping
+```http
+PUT /library
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text"
+      },
+      "author": {
+        "type": "text"
+      },
+      "publication_year": {
+        "type": "integer"
+      }
+    }
+  }
+}
+```
+
 # settings of current indexes
 ```http
 GET /_all/_settings
