@@ -39,7 +39,9 @@ PUT /_index_template/myindex-template
   "priority": 1
 }
 ```
-
+```http
+GET /my-index/_stats
+```
 
 # Get shards, nodes, cluster health
 ```http
