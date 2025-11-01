@@ -48,6 +48,16 @@ GET /my-index-*/_settings
 PUT /my-index-*/_settings
 {
   "index": {
+    "lifecycle": {
+      "name": "delete-after-7-days"
+    },
+    "number_of_shards": "3",
+    "number_of_replicas": "0"
+  }
+}
+
+
+
     "number_of_replicas": 0
   }
 }
