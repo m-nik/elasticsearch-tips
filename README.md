@@ -131,6 +131,7 @@ GET /products/_doc/1
 
 # Query
 GET /products/_search
+GET /products/_search
 {
   "query": {
     "match":{
