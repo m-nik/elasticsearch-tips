@@ -13,6 +13,12 @@ PUT /myindex/_settings
 DELETE /index
 ```
 
+# PUT vs POST
+
+__PUT__: This HTTP method is used in Elasticsearch primarily for creating new documents or replacing existing documents. When you use PUT, you must specify the document ID. If a document with that ID already exists, it will be overwritten.
+
+__POST__: This method can also be used to create new documents. However, if you do not specify the document ID, Elasticsearch automatically generates one for you. POST is also used to update parts of a document.
+
 
 # settings of current indexes
 ```http
