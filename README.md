@@ -52,6 +52,7 @@ GET /_cat/nodes?v
 GET /_cluster/health
 GET /_cluster/health?pretty
 GET /_cluster/stats
+GET /_cluster/settings
 GET /_index_template
 ```
 
