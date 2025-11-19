@@ -40,6 +40,15 @@ PUT /library
   }
 }
 ```
+### Dev tools query string items
+```http
+# Headers
+GET _cat/indices?v
+# Sorting
+GET _cat/indices?s=store.size:desc
+# Filter
+GET _cat/indices?index=*,-.*
+```
 
 # settings of current indexes
 ```http
