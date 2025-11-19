@@ -239,3 +239,12 @@ POST _reindex?wait_for_completion=false
     }
   }
   ```
+
+# Transient vs Persistent Settings
+There are two types of cluster settings - transient and persistent.
+
+Transient Settings
+These settings can be changed dynamically using the Cluster Update Settings API. Examples include things like the number of replicas for an index or routing allocation rules.
+
+Persistent Settings
+These settings require a cluster restart to take effect. Examples include cluster name, data path location, and certain network settings.
