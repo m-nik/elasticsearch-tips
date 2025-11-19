@@ -44,6 +44,10 @@ PUT /library
 # settings of current indexes
 ```http
 GET /_all/_settings
+GET /my-index/_stats
+GET /my-index/_mapping
+GET /my-index/_count
+GET /my-index/_settings
 GET /my-index-*/_settings
 PUT /my-index-*/_settings
 {
@@ -53,12 +57,6 @@ PUT /my-index-*/_settings
     },
     "number_of_shards": "3",
     "number_of_replicas": "0"
-  }
-}
-
-
-
-    "number_of_replicas": 0
   }
 }
 ```
