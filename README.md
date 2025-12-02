@@ -232,23 +232,31 @@ POST _reindex?wait_for_completion=false
       reindex.remote.whitelist: "IP:PORT"`
   ```
 - reindex doesn't transfer mappings and settings:
-  ```yml
-  GET myindex/_mapping
-  GET myindex/_settings
-  ```
-  ```yml
-  PUT myindex
-  {
-    "mappings": {
-      "properties": {
-        ...
-      }
-    },
-    "settings": {
+```http
+GET myindex/_mapping
+GET myindex/_settings
+```
+```http
+PUT myindex
+{
+  "mappings": {
+    "properties": {
       ...
     }
+  },
+  "settings": {
+    ...
   }
-  ```
+}
+```
+- Ignore conflicts and other errors:
+```http
+POST _reindex?wait_for_completion=false
+{
+        "conflicts": "proceed",
+        ...
+}
+```
 
 # Transient vs Persistent Settings
 There are two types of cluster settings - transient and persistent.
