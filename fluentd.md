@@ -46,6 +46,8 @@ chown _fluentd:_fluentd /var/log/remote-log.pos
 ```
 
 
+### Elasticsearch Index Template
+Index pattern: esxi*
 ```json
 {
   "index": {
