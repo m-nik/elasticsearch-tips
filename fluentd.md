@@ -39,3 +39,8 @@ curl -fsSL https://fluentd.cdn.cncf.io/sh/install-ubuntu-noble-fluent-package6-l
   tag_key program
 </match>
 ```
+
+```sh
+touch /var/log/remote-log.pos
+chown _fluentd:_fluentd /var/log/remote-log.pos
+```
