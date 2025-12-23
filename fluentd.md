@@ -44,3 +44,82 @@ curl -fsSL https://fluentd.cdn.cncf.io/sh/install-ubuntu-noble-fluent-package6-l
 touch /var/log/remote-log.pos
 chown _fluentd:_fluentd /var/log/remote-log.pos
 ```
+
+
+```json
+{
+  "index": {
+    "lifecycle": {
+      "name": "delete-after-60-days"
+    },
+    "number_of_shards": "3",
+    "number_of_replicas": "0"
+  }
+}
+```
+```json
+{
+  "dynamic_date_formats": [
+    "strict_date_optional_time",
+    "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z",
+    "date_optional_time",
+    "basic_date_time"
+  ],
+  "dynamic_templates": [],
+  "properties": {
+    "hostname": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "ignore_above": 256,
+          "type": "keyword"
+        }
+      }
+    },
+    "@timestamp": {
+      "format": "strict_date_optional_time",
+      "type": "date"
+    },
+    "host": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "ignore_above": 256,
+          "type": "keyword"
+        }
+      }
+    },
+    "pid": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "ignore_above": 256,
+          "type": "keyword"
+        }
+      }
+    },
+    "program": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "ignore_above": 256,
+          "type": "keyword"
+        }
+      }
+    },
+    "message": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "ignore_above": 256,
+          "type": "keyword"
+        }
+      }
+    },
+    "esxi_time": {
+      "format": "strict_date_optional_time",
+      "type": "date"
+    }
+  }
+}
+```
