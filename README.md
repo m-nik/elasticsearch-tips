@@ -266,3 +266,16 @@ These settings can be changed dynamically using the Cluster Update Settings API.
 
 Persistent Settings
 These settings require a cluster restart to take effect. Examples include cluster name, data path location, and certain network settings.
+
+
+
+
+
+
+
+# Cerate index and mapping using file
+```
+curl -X PUT "https://elk:9200/my-index" -k -H 'Content-Type: application/json' -d @create_index.json
+
+curl -X PUT "https://elk:9200/my-index/_bulk?refresh=true" -H "Content-Type: application/x-ndjson" --data-binary @index_data.ndjson
+```
