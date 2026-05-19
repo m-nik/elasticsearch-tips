@@ -279,3 +279,22 @@ curl -X PUT "https://elk:9200/my-index" -k -H 'Content-Type: application/json' -
 
 curl -X PUT "https://elk:9200/my-index/_bulk?refresh=true" -H "Content-Type: application/x-ndjson" --data-binary @index_data.ndjson
 ```
+
+
+
+# Add analyzer
+```
+PUT myindex
+{
+    "settings": {
+      "analysis": {
+        "analyzer": {
+          "persian_analyzer": {
+            "type": "persian"
+          }
+        }
+      }
+    }
+}
+```
+
